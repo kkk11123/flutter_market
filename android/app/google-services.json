@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "865061479158",
+    "firebase_url": "https://test-project-428ee-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "test-project-428ee",
+    "storage_bucket": "test-project-428ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865061479158:android:7f9cbee446994ff54502d7",
+        "android_client_info": {
+          "package_name": "com.capstone.flutter_market"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLaMkEiF3iZa4a2gTUAXGehVQhFYttEf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
