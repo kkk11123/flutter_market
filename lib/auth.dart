@@ -11,16 +11,20 @@ import 'package:intl/intl.dart';
 import 'package:kpostal/kpostal.dart';
 
 class AuthService {
+  //이 인스턴스를 통해 Firebase 인증 기능(로그인, 로그아웃, 회원가입, 비밀번호 재설정 등)을 사용할 수 있습니다.
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
+  //로그인 함수
   Future<UserCredential> signInWithEmailAndPassword(String email, String password) {
     return _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
   }
 
+  //회원 가입 함수
   Future<UserCredential> createUserWithEmailAndPassword(String email, String password) {
     return _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
   }
 
+  //로그아웃 함수
   Future<void> signOut() {
     return _firebaseAuth.signOut();
   }
@@ -91,6 +95,7 @@ class _AuthPageState extends State<AuthPage> {
                   onPressed: () async {
                     if (formKey.currentState!.validate()) {
                       List<int> bytes = utf8.encode(userPwdController.text);
+                      //비밀번호 해쉬화
                       Digest hashPwd = sha256.convert(bytes);
 
                       String orderNo = "${DateFormat("yMdhms").format(DateTime.now())}-${DateTime.now().millisecond}";
@@ -152,6 +157,7 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
 
+
   Widget inputTextField({
     required TextEditingController currentController,
     required String currentHintText,
@@ -162,6 +168,7 @@ class _AuthPageState extends State<AuthPage> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextFormField(
+        //입력폼 유효성 검사 및 비밀번호 일치 검사
         validator: (value) {
           if (value!.isEmpty) {
             return "내용을 입력해 주세요.";
@@ -183,6 +190,7 @@ class _AuthPageState extends State<AuthPage> {
     );
   }
 
+//import 'package:kpostal/kpostal.dart'; 주소 라이브러리 적용
   Widget receiverZipTextField() {
     return Padding(
       padding: const EdgeInsets.all(8.0),

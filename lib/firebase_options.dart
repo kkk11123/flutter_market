@@ -49,8 +49,10 @@ class DefaultFirebaseOptions {
     }
   }
 
+//Firebase 프로젝트의 설정 정보를 Android와 iOS에 각각 지정하는 코드
+//이 설정을 통해 Firebase가 앱과 연결되어 Firebase의 인증, 데이터베이스, 메시징 등의 기능을 사용할 수 있게 됩니다.
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDLaMkEiF3iZa4a2gTUAXGehVQhFYttEf4',
+    apiKey: 'AIzaSyDLaMkEiF3iZa4a2gTUAXGehVQhFYttEf4', 
     appId: '1:865061479158:android:7f9cbee446994ff54502d7',
     messagingSenderId: '865061479158',
     projectId: 'test-project-428ee',
